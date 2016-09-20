@@ -133,10 +133,7 @@ function greeter( name = 'Anonymous' ) {
 // and returns number to the power of exponent.
 // if no exponent is passed, the exponent should be two
 
-function toPower( num, exp ) {
-	if ( !exp ) {
-		exp = 2;
-	}
+function toPower( num, exp = 2 ) {
 	return Math.pow( num, exp );
 }
 
@@ -148,7 +145,7 @@ function evenOdd( ...nums ) {
 		even: []
 		, odd: []
 	}
-	nums.forEach( function( num ) {
+	nums.forEach( num => {
 		if ( num % 2 === 0 ) {
 			evenOddObj.even.push( num );
 		}
@@ -166,13 +163,9 @@ function evenOdd( ...nums ) {
 
 function multiply( num, ...moreNums ) {
 	var multiplied = [];
-	moreNums.forEach( function( theNum ) {
-		multiplied.push( theNum * num ) ;
-	} );
+	moreNums.forEach( theNum => multiplied.push( theNum * num ) );
 	return multiplied;
 }
-
-
 
 // do not modify
 const bits = [ 2, 4, 8, 16, 32, 64, 128 ];
@@ -180,7 +173,7 @@ const bits = [ 2, 4, 8, 16, 32, 64, 128 ];
 // using an arrow function and the built in .map method, create a new array
 // named mooresBits. mooresBits should be the bits array doubled.
 
-const mooresBits = bits.map( function( bit ) { return bit * 2 } );
+const mooresBits = bits.map( bit => bit * 2 );
 
 
 // do not modify
